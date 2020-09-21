@@ -1,13 +1,17 @@
 <template>
-  <div class="home">
+<el-container>
+  <el-header>Header</el-header>
+  <el-main>  <div class="home">
 
  
 <Left/>
     <Right/>
  
 
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  </div>
+   </div></el-main>
+  <el-footer>Footer</el-footer>
+</el-container>
+
 </template>
 
 <script>
