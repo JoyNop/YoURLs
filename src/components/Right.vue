@@ -1,6 +1,6 @@
 <template>
   <div>
-    Right
+   
   </div>
 </template>
 
@@ -13,8 +13,7 @@ export default {
   methods:{
     init(){
       console.log(333);
-      let body={id:"FCF12B78-0662-4DD4-9A82-72040DB91C9E"}
-      this.$axios.post("https://msdn.itellyou.cn/Index/GetCategory",body)
+      
     }
   },
   mounted(){
