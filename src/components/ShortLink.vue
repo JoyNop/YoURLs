@@ -15,7 +15,7 @@
       ></el-button>
     </el-input>
 
-    <el-dialog title="提示" :visible.sync="dialogVisible" width="40%">
+    <el-dialog title="提示" :visible.sync="dialogVisible" width="100%">
       <div>
         <div class="dialog-content">
           <el-input
@@ -70,17 +70,19 @@ export default {
       }
     },
     async getText() {
-      const loadingWidget = Loading.service({
-        fullscreen: true,
-        text: "正在努力加载中....",
-      });
       let verificationContent = this.input.toLowerCase();
 
+      console.log(verificationContent, "444");
       if (verificationContent) {
         if (
           verificationContent.startsWith("http") ||
           verificationContent.startsWith("https")
         ) {
+          const loadingWidget = Loading.service({
+            fullscreen: true,
+            text: "正在努力加载中....",
+          });
+
           let body = {
             action: "shorturl",
             format: "json",
@@ -131,11 +133,11 @@ export default {
 
 <style lang="scss" scoped>
 .search-input {
-  max-width: 50rem;
-  min-width: 45rem;
+  // max-width: 50rem;
+  // min-width: 45rem;
 }
 .link-input {
-  width: 300px;
+  // width: 300px;
 }
 
 .input-with-select .el-input-group__prepend {
@@ -146,7 +148,7 @@ export default {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  min-width: 350px;
+  // min-width: 350px;
   padding-bottom: 10px;
 }
 </style>
