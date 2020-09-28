@@ -50,7 +50,7 @@ export default {
   name: "ShortLink",
   data() {
     return {
-      input: "https://www.baidu.com",
+      input: "",
       dialogVisible: false,
       shortUrl: {},
     };
