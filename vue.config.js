@@ -1,4 +1,21 @@
 module.exports = {
+  pages: {
+    index: {
+      // 入口文件
+      entry: "src/main.js" /*这个是根入口文件*/,
+      // 模板文件
+      template: "public/index.html",
+      // 输出文件
+      filename: "index.html",
+      // 页面title
+      title: "INS.MOE —— YoUrls WebClient. 最便捷的短连接生成工具",
+    },
+    // 简写格式
+    // 模板文件默认是 `public/subpage.html`
+    // 如果不存在，就是 `public/index.html`.
+    // 输出文件默认是 `subpage.html`.
+    subpage: "src/main.js" /*注意这个是*/,
+  },
   /** 区分打包环境与开发环境
    * process.env.NODE_ENV==='production'  (打包环境)
    * process.env.NODE_ENV==='development' (开发环境)
@@ -7,7 +24,7 @@ module.exports = {
   // 基本路径
   // publicPath: '/',//从 Vue CLI 3.3 起baseUrl已弃用，请使用publicPath
   // 输出文件目录
-  outputDir: 'dist',
+  outputDir: "dist",
   // eslint-loader 是否在保存的时候检查
   // lintOnSave: true,
   // use the full build with in-browser compiler?
@@ -15,8 +32,8 @@ module.exports = {
   //compiler: false,
   // webpack配置
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
-  chainWebpack: () => { },
-  configureWebpack: () => { },
+  chainWebpack: () => {},
+  configureWebpack: () => {},
   //如果想要引入babel-polyfill可以这样写
   // configureWebpack: (config) => {
   //   config.entry = ["babel-polyfill", "./src/main.js"]
@@ -48,24 +65,25 @@ module.exports = {
   //   pwa: {},
   // webpack-dev-server 相关配置
   devServer: {
-      // open: process.platform === 'vue',
-      // host: '127.0.0.1',
-      // port: 8080,
-      // https: false,
-      // hotOnly: false,
-      proxy: { // 设置代理
-          '/api': {
-              target: 'https://ins.moe',
-              changeOrigin: true,
-              pathRewrite: {
-                  '^/api': '/api'
-              }
-          }
+    // open: process.platform === 'vue',
+    // host: '127.0.0.1',
+    // port: 8080,
+    // https: false,
+    // hotOnly: false,
+    proxy: {
+      // 设置代理
+      "/api": {
+        target: "https://ins.moe",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": "/api",
+        },
       },
-      disableHostCheck: true
+    },
+    disableHostCheck: true,
   },
   // 第三方插件配置
   pluginOptions: {
-      // ...
-  }
-}
+    // ...
+  },
+};

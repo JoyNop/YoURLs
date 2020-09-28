@@ -1,17 +1,17 @@
 <template>
-  <el-container>
+  <!-- <el-container>
     <el-header>
       <TopMenu />
     </el-header>
-    <el-main>
-      <ShortLink />
-      <!-- <div class="home">
-        <Left />
-        <Right />
-      </div>-->
+    <el-main class="link-el-main">
+     
     </el-main>
     <el-footer>Footer</el-footer>
-  </el-container>
+  </el-container> -->
+  <div class="home-container">
+    <img alt="insmoe logo" src="../assets/logo.png" width="300">
+    <ShortLink />
+  </div>
 </template>
 
 <script>
@@ -19,21 +19,21 @@
 // import Left from "@/components/Left.vue";
 // import Right from "@/components/Right.vue";
 import ShortLink from "@/components/ShortLink.vue";
-import TopMenu from "@/components/TopMenu.vue";
-
+ 
 export default {
   name: "Home",
   components: {
-    ShortLink,
-    TopMenu,
+    ShortLink  
+    // TopMenu,
   },
 };
 </script>
 <style lang="scss" scoped>
-.home {
+.home-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-direction: column;
 }
 
 .el-header,
@@ -52,14 +52,16 @@ export default {
   line-height: 200px;
 }
 
-.el-main {
+.link-el-main {
   background-color: #e9eef3;
   color: #333;
-  text-align: center;
-  line-height: 160px;
+  display: flex;
+  justify-content: center;
+  // text-align: center;
+  // line-height: 160px;
 }
 
 .el-container {
-   height: 100vh; 
- }
+  height: 100vh;
+}
 </style>
