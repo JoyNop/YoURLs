@@ -91,6 +91,8 @@ export default {
           try {
             const res = await this.$axios.post("/api/create", body);
             this.shortUrl = res.data;
+
+            console.log(this.shortUrl,"55555");
             loadingWidget.close();
 
             this.dialogVisible = true;
@@ -111,6 +113,11 @@ export default {
             // );
           } catch (error) {
             console.log(error);
+            this.$message({
+            showClose: true,
+            message: "系统错误！请联系管理员！",
+            type: "error",
+          });
           }
         } else {
           this.$message({
